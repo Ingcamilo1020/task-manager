@@ -1,0 +1,25 @@
+.message{
+    text-align:center;
+    margin-top: 100px;
+}
+.loading-icon{
+animation: spin 1s linear infinite;
+color:aqua;
+display: block;
+margin: 0 auto;
+font-size: 24px;
+}
+.error-message{
+    text-align:center;
+    margin-top: 100px;
+    color:red;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
