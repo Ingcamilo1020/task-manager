@@ -8,6 +8,7 @@ import {FaSpinner} from 'react-icons/fa';
 import './mainPage.css';   
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI(){
     const { loading,
@@ -61,7 +62,7 @@ function AppUI(){
 
     {openModal && (
         <Modal>
-            La funcion  de agregar Todos
+            <TodoForm/>
         </Modal>
     )
 
