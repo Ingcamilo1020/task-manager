@@ -11,7 +11,7 @@ const{
         saveItem: saveTodos
     }=useLocalStorage('TODOS_V1',[]);
   const[searchValue,setSearchValue]=React.useState('');
-  const[openModal, setOpenModal]= React.useState(true);
+  const[openModal, setOpenModal]= React.useState(false );
   const completedTodos=todos.filter(todo=>!!todo.completed).length;
 // eslint-disable-next-line
   const totalTodos=todos.length;
@@ -22,6 +22,17 @@ const{
     const searchText=searchValue.toLowerCase();
     return todoText.includes(searchText);
 });
+
+  const addTodo = (text) =>{
+
+    const newTodos=[...todos];
+    newTodos.push({
+      text,
+      completed:false,
+    });
+    saveTodos(newTodos);
+  }
+
   const completeTodo=(text)=>{const newTodos=[...todos];
 
     const todoIndex=newTodos.findIndex((todo)=>todo.text===text);
@@ -46,7 +57,8 @@ const{
     completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal
+    setOpenModal,
+    addTodo
     }}>
     {children }
 </TodoContext.Provider>
